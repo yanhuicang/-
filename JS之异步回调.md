@@ -21,13 +21,13 @@ js的宿主环境（比如浏览器，Node）是多线程的。
 
 js是单线程语言，浏览器只分配给js一个主线程，用来执行任务（函数），但一次只能执行一个任务，这些任务形成一个任务队列排队等候执行，但前端的某些任务是非常耗时的，比如网络请求，定时器和事件监听，如果让他们和别的任务一样，都老老实实的排队等待执行的话，执行效率会非常的低，甚至导致页面的假死。所以，浏览器为这些耗时任务开辟了另外的线程，主要包括http请求线程，浏览器定时触发器，浏览器事件触发线程，这些任务是异步的。下图说明了浏览器的主要线程。
 
-![](./image/js-thread.png)
+![](./image/js-thread.png)  
 浏览器线程
 
 图片来自popAnt 画得太好，忍不住引过来 （http://blog.csdn.net/kfanning/article/details/5768776）
 
 js一直在做一个工作，就是从任务队列里提取任务，放到主线程里执行。下面我们来进行更深一步的理解。
-![](./image/event-loop.png)
+![](./image/event-loop.png)  
 event loop
 
 图片来自Philip Roberts的演讲《Help, I'm stuck in an event-loop》非常深刻！
